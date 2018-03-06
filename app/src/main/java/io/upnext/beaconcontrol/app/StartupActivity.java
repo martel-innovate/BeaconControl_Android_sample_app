@@ -27,10 +27,13 @@ public class StartupActivity extends Activity {
 
         BeaconControlConfiguration beaconControlConfiguration = new BeaconControlConfiguration(this);
 
+        startActivity(MainActivity.getIntent(this));
+        /*
         if (beaconControlConfiguration.isLoggedIn()) {
             startActivity(MainActivity.getIntent(this));
         } else {
             startActivity(LoginActivity.getIntent(this));
         }
+        */
     }
 }

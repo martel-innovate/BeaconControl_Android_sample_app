@@ -32,8 +32,12 @@
     <string name="login_screen_create_account_dialog_positive_button">Go to website</string>
     <string name="login_screen_create_account_dialog_negative_button">Cancel</string>
 
-    <string name="beacon_control_signup_website_url">https://admin.beaconcontrol.io/admins/sign_up/</string>
+    <string name="beacon_control_signup_website_url">http://192.168.0.10:3000/admins/sign_up/</string>
+    <string name="sdk_config__service_base_url">http://192.168.0.10:3000/api/v1/</string>
+    <string name="config_client_id">beacon-manager-b6d26fe236cfa1d74589981af9c9f2f86447257f1a4dddf1b6990f74d7275649</string>
+    <string name="config_client_secret">00a172267f9d42d19ff22ca56af64f3782481112ff0f5938ea1e49e816c23fdf</string>
+    <string name="config_user_id">Test</string>
 
-    <string name="information_text">This is a test application using BeaconControl library.\n\nCopyright © 2016, Upnext Technologies Sp. z o.o. All rights reserved.</string>
+    <string name="information_text">This is a test application using BeaconControl.</string>
     <string name="information_logout_button">Logout</string>
 </resources>

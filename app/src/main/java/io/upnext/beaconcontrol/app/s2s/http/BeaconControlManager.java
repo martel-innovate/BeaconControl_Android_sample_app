@@ -29,9 +29,9 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class BeaconControlManager {
 
-    private static final String SERVICE_BASE_URL = "https://admin.beaconcontrol.io/s2s_api/v1/";
-    private static final String CLIENT_SECRET = "55f560c85ce5e645c928eb72537a1183b87b947d9d4129a8786c10f6bff3613b";
-    private static final String CLIENT_ID = "76b8780413c3902d76ae7a05b9a17dcb04ed0696147696d3b4ff3302269efc32";
+    private static final String SERVICE_BASE_URL = "http://192.168.1.218:3000/s2s_api/v1/";
+    private static final String CLIENT_SECRET = "a3fd731fd31fb52c87937e1916259a1044ccaf5e22bdc375b7bdc3c2d34ceae1";
+    private static final String CLIENT_ID = "e2391d813a6b6c81b86c3e3367286be785d91ebb531f0f2aafe3cdd72798f9c3";
 
     private static final int CONNECTION_TIMEOUT_IN_SECONDS = 15;
     private static final int READ_TIMEOUT_IN_SECONDS = 20;

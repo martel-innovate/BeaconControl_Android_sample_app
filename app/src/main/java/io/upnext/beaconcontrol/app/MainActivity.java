@@ -35,7 +35,6 @@ import io.upnext.beaconcontrol.app.beacons.BeaconsFragment;
 import io.upnext.beaconcontrol.app.beacons.BeaconsFragment.ReloadConfigurationCallback;
 import io.upnext.beaconcontrol.app.config.BeaconControlConfiguration;
 import io.upnext.beaconcontrol.app.info.InformationFragment;
-import io.upnext.beaconcontrol.app.info.InformationFragment.LogoutCallback;
 import io.upnext.beaconcontrol.sdk.Action;
 import io.upnext.beaconcontrol.sdk.Beacon;
 import io.upnext.beaconcontrol.sdk.BeaconControl;
@@ -43,7 +42,8 @@ import io.upnext.beaconcontrol.sdk.BeaconDelegate;
 import io.upnext.beaconcontrol.sdk.BeaconErrorListener;
 import io.upnext.beaconcontrol.sdk.ErrorCode;
 
-public class MainActivity extends AppCompatActivity implements ReloadConfigurationCallback, LogoutCallback {
+
+public class MainActivity extends AppCompatActivity implements ReloadConfigurationCallback {
 
     private static final String TAG = "MainActivity";
     private static final String LOCATION_REQUIREMENT_EXPLANATION_DIALOG_TAG = "LOCATION_REQUIREMENT_EXPLANATION_DIALOG_TAG";
@@ -91,9 +91,9 @@ public class MainActivity extends AppCompatActivity implements ReloadConfigurati
         beaconControlConfiguration = new BeaconControlConfiguration(this);
         beaconControl = BeaconControl.getInstance(
                 this,
-                beaconControlConfiguration.getClientId(),
-                beaconControlConfiguration.getClientSecret(),
-                beaconControlConfiguration.getUserId()
+                getString(R.string.config_client_id),
+                getString(R.string.config_client_secret),
+                getString(R.string.config_user_id)
         );
         beaconControl.enableLogging(true);
         beaconControl.setBeaconDelegate(new BeaconDelegate() {
@@ -140,16 +140,6 @@ public class MainActivity extends AppCompatActivity implements ReloadConfigurati
     @Override
     public void reloadConfiguration() {
         beaconControl.reloadConfiguration();
-    }
-
-    @Override
-    public void logout() {
-        Log.d(TAG, "Logging out");
-        beaconControl.stopScan();
-        beaconControlConfiguration.clear();
-        logsStore.clear();
-        startActivity(StartupActivity.getIntent(this));
-        finish();
     }
 
     @Override

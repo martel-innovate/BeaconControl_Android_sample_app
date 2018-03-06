@@ -24,30 +24,15 @@ public class InformationFragment extends Fragment {
         return new InformationFragment();
     }
 
-    public interface LogoutCallback {
-        void logout();
-    }
-
-    private View logoutButton;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_information, container, false);
-        logoutButton = view.findViewById(R.id.logout_button);
-        logoutButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((LogoutCallback) getActivity()).logout();
-            }
-        });
-
         return view;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        logoutButton = null;
     }
 }

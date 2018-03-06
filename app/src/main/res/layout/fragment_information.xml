@@ -19,13 +19,4 @@
 
     </ScrollView>
 
-    <Button
-        android:id="@+id/logout_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="@dimen/padding_small"
-        android:text="@string/information_logout_button"
-        android:theme="@style/AppTheme.Button" />
-
 </LinearLayout>
